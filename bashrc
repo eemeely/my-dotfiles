@@ -97,15 +97,23 @@ if [ -z "$BASHRCSOURCED" ]; then
 fi
 # vim:ts=4:sw=4
 
+alias ls='ls -F -h --color=always -v --author --time-style=long-iso'
+alias ll='ls -l'
+alias l='ls -l -a'
+alias pleas='sudo'
+
+
+
+eval "$(dircolors)"
+
 #pfetch
 #fet.sh
 colorscript random
-#function _update_ps1() {
-#	PS1=$(powerline-shell $?)
-#}
-#
-#if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _ipdate_ps1 ]]; then
-#	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-#fi
-source ~/trueline/trueline.sh
+function _update_ps1() {
+	PS1=$(powerline-shell $?)
+}
 
+if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _ipdate_ps1 ]]; then
+	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+fi
+#source ~/trueline/trueline.sh
