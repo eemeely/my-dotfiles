@@ -442,7 +442,7 @@ type = internal/cpu
 interval = 1
 format-foreground = #fefefe
 format-background = #8d62ad
-format-prefix = ""
+format-prefix = 
 format-prefix-foreground = #fefefe
 
 label-font = 1

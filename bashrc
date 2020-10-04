@@ -97,23 +97,18 @@ if [ -z "$BASHRCSOURCED" ]; then
 fi
 # vim:ts=4:sw=4
 
-alias ls='ls -F -h --color=always -v --author --time-style=long-iso'
-alias ll='ls -l'
-alias l='ls -l -a'
+alias ls='ls -alh --color=auto'
 alias pleas='sudo'
-
-
+alias d='sudo dnf'
+alias c='clear'
+alias r='ranger'
+alias s='sudo'
+alias i3='vim ~/.config/i3/config'
 
 eval "$(dircolors)"
 
 #pfetch
 #fet.sh
 colorscript random
-function _update_ps1() {
-	PS1=$(powerline-shell $?)
-}
 
-if [[ $TERM != linux && ! $PROMPT_COMMAND =~ _ipdate_ps1 ]]; then
-	PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
-fi
-#source ~/trueline/trueline.sh
+export PS1="\[$(tput bold)\]\[\033[38;5;160m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;77m\]@\[$(tput sgr0)\]\[\033[38;5;81m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;160m\]]\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
