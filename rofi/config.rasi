@@ -1,0 +1,14 @@
+configuration {
+	theme:				"/home/eemee/.config/rofi/themes/gruvbox-dark-solid-modified.rasi";
+	font:				"Roboto Bold 10";
+	combi-modi:			"drun,window,run,keys";
+	width:				17;
+	eh:					1;
+	bw:					3;
+	lines:				10;
+	sidebar-mode:		false;
+	location:			0;
+	icon-theme:			"Vimix-Dark";
+	show-icons:			true;
+	separator-style:	none;
+}

@@ -6,6 +6,7 @@
 # ||||||  ||||||  ||      ||  ||||||  ||||||
 
 set $mod Mod4
+set $term terminator
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -29,21 +30,22 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 focus_follows_mouse no
-
 #mv workspaces betwen screens
 bindsym $mod+p move workspace to output right
 
 # apps binds
 bindsym $mod+Return exec terminator
-bindsym $mod+b exec brave
+bindsym $mod+b exec firefox
 bindsym $mod+m exec pcmanfm
-
+bindsym $mod+Shift+d [instance="dropdown"] scratchpad show; [instance="dropdown"] move position center
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec rofi -show drun
+bindsym $mod+w exec rofi -show window
+bindsym $mod+Shift+s exec flameshot screen -p ~/Pictures
 
 # change focus
 bindsym $mod+h focus left
@@ -80,7 +82,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -163,7 +165,7 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default"
 }
-
+                    
 bindsym $mod+r mode "resize"
 
 exec ~/.config/polybar/launch.sh
@@ -229,6 +231,20 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+
+#bar{
+ #   status_command i3status
+  #  position top
+#}
+
+
+for_window [instance="dropdown"] floating enable
+for_window [instance="dropdown"] resize set 625 400
+for_window [instance="dropdown"] move scratchpad
+for_window [instance="dropdown"] border pixel 5
+
+exec --no-startup-is dunst
+
 exec --no-startup-id pulseaudio
 
 exec --no-startup-id discord
