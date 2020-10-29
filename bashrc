@@ -96,7 +96,7 @@ if [ -z "$BASHRCSOURCED" ]; then
 
 fi
 # vim:ts=4:sw=4
-
+alias l='ls -alh --color=auto'
 alias ls='ls -alh --color=auto'
 alias pleas='sudo'
 alias d='sudo dnf'
@@ -104,11 +104,13 @@ alias c='clear'
 alias r='ranger'
 alias s='sudo'
 alias i3='vim ~/.config/i3/config'
-
+alias h='htop'
+alias ssd='sudo shutdown now'
 eval "$(dircolors)"
 
 #pfetch
 #fet.sh
-colorscript random
+#colorscript random
 
-export PS1="\[$(tput bold)\]\[\033[38;5;160m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;77m\]@\[$(tput sgr0)\]\[\033[38;5;81m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;160m\]]\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
+#export PS1="\[$(tput bold)\]\[\033[38;5;160m\][\[$(tput sgr0)\]\[\033[38;5;11m\]\u\[$(tput sgr0)\]\[\033[38;5;77m\]@\[$(tput sgr0)\]\[\033[38;5;81m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;219m\]\w\[$(tput sgr0)\]\[$(tput bold)\]\[\033[38;5;160m\]]\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
+export PS1=" \W >  "
