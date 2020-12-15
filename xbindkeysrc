@@ -1,0 +1,22 @@
+
+# thumb wheel up => increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ -5%"
+   b:6
+
+# thumb wheel down => lower volume
+"pactl set-sink-volume @DEFAULT_SINK@ +5%"
+   b:7
+
+   
+# thumb button => play/pause music         
+# Credit to gregmuellegger https://bbs.archlinux.org/viewtopic.php?pid=1551271#p1551271                               
+# We need a sleep here since the button triggers a few more key codes. 
+# It also triggers Control+Mod2+Control_L and Alt+Mod2+Alt_L. The sleep       
+# prevents that X receives those keypresses simultaniously. Therefore they    
+# might interfere and trigger unwanted actions. By the sleep we make sure that
+# the Alt+Left is receive as distinct event.                                  
+#"sleep 0.1 && xte 'alacritty'" 
+"rofi -show drun"
+   m:0xc + c:23
+   
+   
