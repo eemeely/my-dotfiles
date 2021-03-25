@@ -1,7 +1,7 @@
 configuration {
 	theme:				"/home/eemee/.config/rofi/themes/gruvbox-dark-solid-modified.rasi";
 	font:				"Roboto Bold 10";
-	combi-modi:			"drun,window,run,keys";
+	combi-modi:			"drun,window,run,keys,combi";
 	width:				17;
 	eh:					1;
 	bw:					3;
